@@ -31,7 +31,7 @@ class Configuration implements ConfigurationInterface
                                 ->then(function($v){ return strtolower($v); })
                             ->end()
                             ->validate()
-                                ->ifNotInArray(get_class_methods('Symfony\Component\HttpKernel\Log\LoggerInterface'))
+                                ->ifNotInArray(get_class_methods('Psr\Log\LoggerInterface'))
                                 ->thenInvalid('The "%s" level does not correspond to a method in LoggerInterface')
                             ->end()
                         ->end()
